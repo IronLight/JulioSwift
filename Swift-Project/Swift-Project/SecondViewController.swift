@@ -17,10 +17,12 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var superView: UIView!
     @IBOutlet weak var BoutonNext: UIButton!
     
+    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        BoutonNext.hidden = true
+        BoutonNext.hidden = false
+        button.hidden = true
         
         oriantation()
         
@@ -59,6 +61,8 @@ class SecondViewController: UIViewController {
             self.presentViewController(alertController, animated: true, completion: nil)
         
         BoutonNext.hidden = false
+        button.hidden = false
+
     }
 
     

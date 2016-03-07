@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Première Vue-->
@@ -115,21 +116,34 @@
                     </view>
                     <navigationItem key="navigationItem" id="IfN-b4-4ue">
                         <barButtonItem key="backBarButtonItem" title="Retour" id="kwD-i4-b0r"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="gAr-K6-9w0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="w6C-vJ-JpY">
-                                <rect key="frame" x="499" y="7" width="148" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="BoutonNextAction:" destination="ygz-oS-uBI" eventType="touchUpInside" id="JId-R8-594"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="SiQ-XF-9CN">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gjH-pJ-mbf">
+                                    <rect key="frame" x="601" y="7" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <segue destination="3wn-S4-UDb" kind="show" identifier="continue" id="HRV-R8-DuS"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="gAr-K6-9w0">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="w6C-vJ-JpY">
+                                    <rect key="frame" x="445" y="7" width="148" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Next"/>
+                                    <connections>
+                                        <action selector="BoutonNextAction:" destination="ygz-oS-uBI" eventType="touchUpInside" id="JId-R8-594"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="BoutonNext" destination="w6C-vJ-JpY" id="IC8-HL-dOj"/>
+                        <outlet property="button" destination="gjH-pJ-mbf" id="cfY-gg-fhK"/>
                         <outlet property="elementClickable" destination="trx-RP-vDS" id="U82-c1-1FY"/>
                         <outlet property="imageView" destination="CAx-Zl-o3e" id="MPS-rI-Azr"/>
                         <outlet property="scrollView" destination="dlP-LA-V5o" id="eku-Ti-3Kl"/>
@@ -139,6 +153,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8s-ut-WzV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1354.5" y="248.5"/>
+        </scene>
+        <!--Level 2-->
+        <scene sceneID="pCv-qp-X9a">
+            <objects>
+                <viewController id="3wn-S4-UDb" customClass="ThirdViewController" customModule="Swift_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IQq-1g-Og9"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Cx-TZ-WEa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vao-Dv-pK7">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="045-0f-hYb">
+                                <rect key="frame" x="0.0" y="0.0" width="668" height="376"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4o-Ge-uEo">
+                                        <rect key="frame" x="102" y="64" width="474" height="271"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="HZo-J6-8rD">
+                                                <rect key="frame" x="0.0" y="0.0" width="474" height="271"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="mmz-M6-taW" appends="YES" id="wbb-3V-bq8"/>
+                                                </connections>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPk-35-YYs">
+                                                <rect key="frame" x="223" y="57" width="18" height="20"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="045-0f-hYb" firstAttribute="centerX" secondItem="vao-Dv-pK7" secondAttribute="centerX" id="Dvz-Z6-nve"/>
+                            <constraint firstItem="045-0f-hYb" firstAttribute="centerY" secondItem="vao-Dv-pK7" secondAttribute="centerY" id="EGh-gI-GFa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Level 2" id="tVo-WM-yBE"/>
+                    <connections>
+                        <outlet property="elementClickable" destination="LPk-35-YYs" id="dEQ-0R-6Ru"/>
+                        <outlet property="imageView" destination="HZo-J6-8rD" id="6nL-LM-ew2"/>
+                        <outlet property="scrollView" destination="045-0f-hYb" id="D9h-tp-yev"/>
+                        <outlet property="superView" destination="v4o-Ge-uEo" id="03s-bU-a9Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="noH-ky-P0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="mmz-M6-taW"/>
+            </objects>
+            <point key="canvasLocation" x="2102.5" y="360.5"/>
         </scene>
         <!--Troisième View Controller Scene-->
         <scene sceneID="4ZC-T4-nTs">
@@ -151,34 +218,7 @@
                     <view key="view" contentMode="scaleToFill" id="cXu-KE-xbz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="045-0f-hYb">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4o-Ge-uEo">
-                                        <rect key="frame" x="48" y="64" width="569" height="311"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPk-35-YYs">
-                                                <rect key="frame" x="267" y="67" width="18" height="20"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="HZo-J6-8rD">
-                                                <rect key="frame" x="0.0" y="0.0" width="569" height="311"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="v4o-Ge-uEo" firstAttribute="centerY" secondItem="045-0f-hYb" secondAttribute="centerY" id="5sa-sa-TcN"/>
-                                    <constraint firstItem="v4o-Ge-uEo" firstAttribute="centerX" secondItem="045-0f-hYb" secondAttribute="centerX" id="9kC-xG-jjn"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="045-0f-hYb" firstAttribute="centerY" secondItem="cXu-KE-xbz" secondAttribute="centerY" id="9UW-Dw-b24"/>
-                            <constraint firstItem="045-0f-hYb" firstAttribute="centerX" secondItem="cXu-KE-xbz" secondAttribute="centerX" id="r2a-bT-gDD"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="elementClickable" destination="LPk-35-YYs" id="fpL-nz-kjD"/>
