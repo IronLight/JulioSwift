@@ -17,6 +17,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var superView: UIView!
     @IBOutlet weak var BoutonNext: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         BoutonNext.hidden = true
@@ -59,7 +60,6 @@ class SecondViewController: UIViewController {
         
         BoutonNext.hidden = false
     }
-
 
     
     //Script permettant de bloquer l'orientation en landscape pour cette vue
