@@ -52,8 +52,8 @@ class SecondViewController: UIViewController {
     //Action effectué lors du click sur Nicolas Cage
     func TapViewAction(gestuRecognizer: UITapGestureRecognizer)
     {
-            let alertController = UIAlertController(title: "iOScreator", message:
-                "Good job!", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController = UIAlertController(title: "Bravo", message:
+                "Passe au level suivant", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
         
             self.presentViewController(alertController, animated: true, completion: nil)

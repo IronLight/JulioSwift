@@ -25,18 +25,20 @@ class ThirdViewController: UIViewController {
         scrollView2.userInteractionEnabled = true
         elementClickable2.userInteractionEnabled = true
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: "TapAction2")
+        let tapGesture = UITapGestureRecognizer(target: self, action: "TapAction2:")
         
         elementClickable2.addGestureRecognizer(tapGesture)
     }
     
     func TapAction2(gestuRecognizer: UITapGestureRecognizer)
     {
-        let alertController2 = UIAlertController(title: "iOScreator", message:
-            "Good job!", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController2.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        let alertController = UIAlertController(title: "Bravo", message:
+            "Passe au level suivant", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
         
-        self.presentViewController(alertController2, animated: true, completion: nil)
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        GlobalTimer.Static.myTimer.invalidate()
     }
     
     func oriantation()

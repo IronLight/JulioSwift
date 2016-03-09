@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HGr-Nz-qIT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HGr-Nz-qIT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Première Vue-->
+        <!--Where's Nicolas Cage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,18 +48,35 @@
                                     <segue destination="ygz-oS-uBI" kind="show" identifier="play" id="5SV-ZJ-6tm"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cage" translatesAutoresizingMaskIntoConstraints="NO" id="Ihf-wv-Hyo">
+                                <rect key="frame" x="55" y="310" width="265" height="274"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="274" id="C0i-6T-cCD"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAZ-R4-X8s">
+                                <rect key="frame" x="0.0" y="64" width="375" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SKe-kx-csg" firstAttribute="top" secondItem="FAZ-R4-X8s" secondAttribute="bottom" constant="52" id="69c-b7-hqd"/>
+                            <constraint firstItem="FAZ-R4-X8s" firstAttribute="centerX" secondItem="SKe-kx-csg" secondAttribute="centerX" id="CPR-Ua-3SE"/>
+                            <constraint firstItem="FAZ-R4-X8s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Geg-M6-agc"/>
                             <constraint firstItem="SKe-kx-csg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="178" id="Ilx-LY-uIU"/>
                             <constraint firstItem="pbb-0i-sSl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JrR-0I-lON"/>
                             <constraint firstItem="pTT-Ic-sgF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-36" id="PVS-h0-7Jg"/>
+                            <constraint firstItem="Ihf-wv-Hyo" firstAttribute="centerX" secondItem="SKe-kx-csg" secondAttribute="centerX" id="PZp-kd-wV4"/>
+                            <constraint firstItem="FAZ-R4-X8s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RLZ-9Y-ljL"/>
+                            <constraint firstItem="Ihf-wv-Hyo" firstAttribute="top" secondItem="pbb-0i-sSl" secondAttribute="bottom" constant="24" id="Ts6-ae-xQH"/>
                             <constraint firstItem="pbb-0i-sSl" firstAttribute="top" secondItem="SKe-kx-csg" secondAttribute="bottom" constant="40" id="bRb-5C-4cg"/>
                             <constraint firstItem="SKe-kx-csg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fQT-mu-kfe"/>
                             <constraint firstItem="pTT-Ic-sgF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gPq-OG-GTg"/>
+                            <constraint firstItem="Ihf-wv-Hyo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="39" id="peE-Dd-XPM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Première Vue" id="xjA-0T-KPR"/>
+                    <navigationItem key="navigationItem" title="Where's Nicolas Cage" id="xjA-0T-KPR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -161,7 +179,6 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qfc-A5-B7E">
                                                 <rect key="frame" x="226" y="69" width="15" height="18"/>
-                                                <color key="backgroundColor" red="0.066633354242027876" green="0.26366189327309464" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -209,5 +226,6 @@
     <resources>
         <image name="Image-1" width="1752" height="1168"/>
         <image name="Image-2" width="2378" height="1391"/>
+        <image name="cage" width="256" height="256"/>
     </resources>
 </document>

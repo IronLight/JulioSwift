@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        oriantation()
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
@@ -28,9 +30,15 @@ class ViewController: UIViewController {
     override func shouldAutorotate() -> Bool {
         return true;
     }
+    
+    func oriantation()
+    {
+        let value = UIInterfaceOrientation.Portrait.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+    }
 
     @IBAction func Play(sender: AnyObject) {
-        NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: Selector("popupResult"), userInfo: nil, repeats: false)
+        GlobalTimer.Static.myTimer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: Selector("popupResult"), userInfo: nil, repeats: false)
     }
     
     func popupResult(){

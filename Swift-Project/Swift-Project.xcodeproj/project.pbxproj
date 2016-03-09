@@ -15,6 +15,7 @@
 		D84CA0591C7CC6AA00D8A9D7 /* Swift_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84CA0581C7CC6AA00D8A9D7 /* Swift_ProjectTests.swift */; };
 		D84CA0641C7CC6AA00D8A9D7 /* Swift_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84CA0631C7CC6AA00D8A9D7 /* Swift_ProjectUITests.swift */; };
 		D87693691C7E35CB0018C2D2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87693681C7E35CB0018C2D2 /* SecondViewController.swift */; };
+		FA64DCA91C906682003E9EAA /* GlobalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64DCA81C906682003E9EAA /* GlobalTimer.swift */; };
 		FA888BC01C8DEB0400DF3F9B /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888BBF1C8DEB0400DF3F9B /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		D84CA0631C7CC6AA00D8A9D7 /* Swift_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_ProjectUITests.swift; sourceTree = "<group>"; };
 		D84CA0651C7CC6AA00D8A9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87693681C7E35CB0018C2D2 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		FA64DCA81C906682003E9EAA /* GlobalTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalTimer.swift; sourceTree = "<group>"; };
 		FA888BBF1C8DEB0400DF3F9B /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				D84CA04C1C7CC6AA00D8A9D7 /* LaunchScreen.storyboard */,
 				D84CA04F1C7CC6AA00D8A9D7 /* Info.plist */,
 				FA888BBF1C8DEB0400DF3F9B /* ThirdViewController.swift */,
+				FA64DCA81C906682003E9EAA /* GlobalTimer.swift */,
 			);
 			path = "Swift-Project";
 			sourceTree = "<group>";
@@ -199,7 +202,7 @@
 				TargetAttributes = {
 					D84CA03F1C7CC6AA00D8A9D7 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = XG5697M5M5;
+						DevelopmentTeam = G63Y5KAM73;
 					};
 					D84CA0531C7CC6AA00D8A9D7 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -267,6 +270,7 @@
 				D84CA0461C7CC6AA00D8A9D7 /* ViewController.swift in Sources */,
 				FA888BC01C8DEB0400DF3F9B /* ThirdViewController.swift in Sources */,
 				D84CA0441C7CC6AA00D8A9D7 /* AppDelegate.swift in Sources */,
+				FA64DCA91C906682003E9EAA /* GlobalTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
