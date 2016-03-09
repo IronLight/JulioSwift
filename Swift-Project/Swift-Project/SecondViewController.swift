@@ -18,6 +18,9 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
     
+    var timer = NSTimer()
+    var alertController = UIAlertController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         button.hidden = true
@@ -36,6 +39,32 @@ class SecondViewController: UIViewController {
         let imageRecognized = UITapGestureRecognizer(target: self, action: "TapViewAction:")
         
         elementClickable.addGestureRecognizer(imageRecognized)
+        
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: "StartTapCoolDown:")
+        
+        tapGesture.numberOfTapsRequired = 1
+        
+        superView.addGestureRecognizer(tapGesture)
+    }
+    
+    //Action effectué lors du click sur l'écran
+    func StartTapCoolDown(gestuRecognizer: UITapGestureRecognizer)
+    {
+        alertController = UIAlertController(title: "Perdu !", message:
+            "Veuillez attendre 2 secondes pour réessayer", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "DeleteAlertController", userInfo: nil, repeats: false)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
+    
+    // Affiche le bouton Ok de la popup
+    func DeleteAlertController()
+    {
+        alertController.dismissViewControllerAnimated(true, completion: nil)
     }
     
     //Fonction permettant d'attribuer la superview au scrollView pour le zoom

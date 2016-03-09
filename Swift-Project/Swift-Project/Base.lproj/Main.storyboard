@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777.5" y="480.5"/>
+            <point key="canvasLocation" x="661.5" y="480.5"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="ON5-qs-EzP">
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8s-ut-WzV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354.5" y="248.5"/>
+            <point key="canvasLocation" x="1384.5" y="-69.5"/>
         </scene>
         <!--Level 2-->
         <scene sceneID="pCv-qp-X9a">
@@ -191,8 +191,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Level 2" id="tVo-WM-yBE"/>
+                    <navigationItem key="navigationItem" title="Level 2" id="tVo-WM-yBE">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fhe-lr-vbP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nK4-Cm-WAx">
+                                <rect key="frame" x="499" y="7" width="148" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Score"/>
+                                <connections>
+                                    <segue destination="dFV-9z-bCi" kind="show" id="eiq-pU-6hJ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="buttonScore" destination="nK4-Cm-WAx" id="aKm-5U-a9j"/>
                         <outlet property="elementClickable2" destination="qfc-A5-B7E" id="e7Z-MX-qNV"/>
                         <outlet property="imageView2" destination="bO0-eh-Dlf" id="LA3-Wb-Egf"/>
                         <outlet property="scrollView2" destination="LwC-xD-goX" id="Vak-m3-YH9"/>
@@ -201,7 +213,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noH-ky-P0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354.5" y="727.5"/>
+            <point key="canvasLocation" x="1384.5" y="409.5"/>
+        </scene>
+        <!--Score-->
+        <scene sceneID="rI5-lv-DpR">
+            <objects>
+                <viewController id="dFV-9z-bCi" customClass="ThoufffController" customModule="Swift_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fxU-8J-ijv"/>
+                        <viewControllerLayoutGuide type="bottom" id="zJ9-Pf-hIG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h2P-Kl-mCC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34R-Tq-J53">
+                                <rect key="frame" x="251" y="156" width="165" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pT-qQ-WIg">
+                                <rect key="frame" x="308" y="228" width="50" height="30"/>
+                                <state key="normal" title="Accueil"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="E3X-z6-HEV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Score" id="fxG-Sg-IyJ"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4XA-KR-ro7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1384.5" y="891.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bDg-wG-De0">
@@ -220,7 +267,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uok-vY-riH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279.5" y="480.5"/>
+            <point key="canvasLocation" x="139.5" y="480.5"/>
         </scene>
     </scenes>
     <resources>
@@ -228,4 +275,7 @@
         <image name="Image-2" width="2378" height="1391"/>
         <image name="cage" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dgF-7E-lvX"/>
+    </inferredMetricsTieBreakers>
 </document>
