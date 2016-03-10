@@ -17,7 +17,8 @@ class ThoufffController: UIViewController {
         
         let TimerScore: Double = (30 - Score.Static.myScore) * 1000
         
-        TheScore.text = "Ton score est : \(TimerScore)"
+        TheScore.text = "Ton score est : \(String(format: "%.0f", TimerScore))"
+        
     }
     
 }
