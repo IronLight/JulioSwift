@@ -168,28 +168,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LwC-xD-goX">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LwC-xD-goX">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doz-Y2-Duc">
-                                        <rect key="frame" x="83" y="66" width="493" height="309"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doz-Y2-Duc">
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="bO0-eh-Dlf">
-                                                <rect key="frame" x="-8" y="0.0" width="501" height="309"/>
+                                                <rect key="frame" x="0.0" y="-2" width="667" height="377"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qfc-A5-B7E">
-                                                <rect key="frame" x="226" y="69" width="15" height="18"/>
+                                                <rect key="frame" x="316" y="80" width="15" height="18"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="doz-Y2-Duc" firstAttribute="top" secondItem="LwC-xD-goX" secondAttribute="top" id="Mdw-Yg-o6F"/>
+                                    <constraint firstItem="doz-Y2-Duc" firstAttribute="leading" secondItem="LwC-xD-goX" secondAttribute="leading" id="Tih-iU-eta"/>
+                                    <constraint firstAttribute="trailing" secondItem="doz-Y2-Duc" secondAttribute="trailing" id="Z0H-9H-y4M"/>
+                                    <constraint firstAttribute="bottom" secondItem="doz-Y2-Duc" secondAttribute="bottom" id="fjj-Pg-Gyj"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="3wn-S4-UDb" id="9Vb-xW-U1e"/>
                                 </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LwC-xD-goX" firstAttribute="top" secondItem="vao-Dv-pK7" secondAttribute="topMargin" id="GCt-bX-iYX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LwC-xD-goX" secondAttribute="trailing" constant="-20" id="W4d-al-fHd"/>
+                            <constraint firstItem="2Cx-TZ-WEa" firstAttribute="top" secondItem="LwC-xD-goX" secondAttribute="bottom" id="WRU-Hf-A1k"/>
+                            <constraint firstItem="LwC-xD-goX" firstAttribute="leading" secondItem="vao-Dv-pK7" secondAttribute="leadingMargin" constant="-20" id="YuK-SE-Tqk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Level 2" id="tVo-WM-yBE">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="fhe-lr-vbP">
