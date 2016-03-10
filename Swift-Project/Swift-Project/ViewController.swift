@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         let firstAction = UIAlertAction(title: "Accueil", style: .Default){
             (action) in if let navController = self.navigationController{
                 navController.popViewControllerAnimated(true)
+                navController.popViewControllerAnimated(true)
             }
             
         }
