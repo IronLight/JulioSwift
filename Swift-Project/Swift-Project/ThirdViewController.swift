@@ -70,6 +70,16 @@ class ThirdViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
         
         buttonScore.hidden = false
+        
+        
+        
+        
+        let fireDate = GlobalTimer.Static.myTimer.fireDate
+        let nowDate = NSDate()
+        let remainingTimeInterval = nowDate.timeIntervalSinceDate(fireDate)
+        
+        Score.Static.myScore = remainingTimeInterval
+        
         GlobalTimer.Static.myTimer.invalidate()
     }
     

@@ -57,6 +57,7 @@ class SecondViewController: UIViewController {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "DeleteAlertController", userInfo: nil, repeats: false)
         
+        
         self.presentViewController(alertController, animated: true, completion: nil)
         
     }
