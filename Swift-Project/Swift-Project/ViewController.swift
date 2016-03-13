@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,9 +40,13 @@ class ViewController: UIViewController {
 
     // Lors du clique sur le bouton play lance le timer et fait passer à la vue suivante
     @IBAction func Play(sender: AnyObject) {
+        GlobalTimer.Static.myCounter = 0
+        GlobalTimer.Static.myTimer.invalidate()
+        GlobalTimer.Static.mySecondTimer.invalidate()
         GlobalTimer.Static.myTimer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: Selector("popupResult"), userInfo: nil, repeats: false)
     }
-    // Lorsque le timeur atteint 30 secondes un messages s'affiche "Perdu" et retour au menu
+    
+    // Lorsque le timer atteint 30 secondes un messages s'affiche "Perdu" et retour au menu
     func popupResult(){
         let alert = UIAlertController(title: "Perdu", message: "Temps écoulé", preferredStyle: .Alert)
         

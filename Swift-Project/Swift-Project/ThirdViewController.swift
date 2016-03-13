@@ -23,8 +23,27 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Affiche le timer dans le titre
+        if GlobalTimer.Static.myCounter > 9 {
+            
+            self.title = "\(GlobalTimer.Static.myCounter)"
+            
+        }
+        else {
+            
+            self.title = "0\(GlobalTimer.Static.myCounter)"
+        }
+        
+        // Remet en marche les deux Timers
+        GlobalTimer.Static.myTimer = NSTimer.scheduledTimerWithTimeInterval( GlobalTimer.Static.remainingTimeInterval, target: self, selector: Selector("popupResult"), userInfo: nil, repeats: true)
+        
+        GlobalTimer.Static.mySecondTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("counter"), userInfo: nil, repeats: true)
+        
+        
+        //
         buttonScore.hidden = true
         
+        // Gere le zoom
         self.scrollView2.minimumZoomScale = 1.0
         self.scrollView2.maximumZoomScale = 6.0
         
@@ -40,6 +59,21 @@ class ThirdViewController: UIViewController {
         tapGesture2.numberOfTapsRequired = 1
         
         superView2.addGestureRecognizer(tapGesture2)
+    }
+    
+    // Lorsque le timer atteint 30 secondes un messages s'affiche "Perdu" et retour au menu
+    func popupResult(){
+        let alert = UIAlertController(title: "Perdu", message: "Temps écoulé", preferredStyle: .Alert)
+        
+        let firstAction = UIAlertAction(title: "Accueil", style: .Default){
+            (action) in if let navController = self.navigationController{
+                navController.popViewControllerAnimated(true)
+                navController.popViewControllerAnimated(true)
+            }
+            
+        }
+        alert.addAction(firstAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     //Action effectué lors du click sur l'écran
@@ -64,7 +98,7 @@ class ThirdViewController: UIViewController {
     func TapAction2(gestuRecognizer: UITapGestureRecognizer)
     {
         let alertController = UIAlertController(title: "Bravo", message:
-            "Passe au level suivant", preferredStyle: UIAlertControllerStyle.Alert)
+            "Découvre ton score !", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
@@ -78,6 +112,26 @@ class ThirdViewController: UIViewController {
         Score.Static.myScore = remainingTimeInterval
         
         GlobalTimer.Static.myTimer.invalidate()
+        GlobalTimer.Static.mySecondTimer.invalidate()
+    }
+    
+    func counter() {
+        
+        ++GlobalTimer.Static.myCounter
+        // 9
+        if GlobalTimer.Static.myCounter > 9 {
+            
+            self.title = "\(GlobalTimer.Static.myCounter)"
+            
+        }
+        else {
+            
+            self.title = "0\(GlobalTimer.Static.myCounter)"
+        }
+        
+        if GlobalTimer.Static.myCounter == 30 {
+            GlobalTimer.Static.mySecondTimer.invalidate()
+        }
     }
     
     func oriantation()

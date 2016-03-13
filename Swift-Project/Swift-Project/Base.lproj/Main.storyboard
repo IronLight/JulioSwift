@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-0i-sSl">
@@ -36,7 +36,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKe-kx-csg">
-                                <rect key="frame" x="144" y="178" width="88" height="35"/>
+                                <rect key="frame" x="290" y="178" width="88" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="Jl3-eI-QKJ"/>
                                     <constraint firstAttribute="height" constant="35" id="Xql-2n-Prr"/>
@@ -49,13 +49,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cage" translatesAutoresizingMaskIntoConstraints="NO" id="Ihf-wv-Hyo">
-                                <rect key="frame" x="55" y="310" width="265" height="274"/>
+                                <rect key="frame" x="59" y="310" width="549" height="274"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="274" id="C0i-6T-cCD"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAZ-R4-X8s">
-                                <rect key="frame" x="0.0" y="64" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="64" width="667" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -76,7 +76,9 @@
                             <constraint firstItem="Ihf-wv-Hyo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="39" id="peE-Dd-XPM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Where's Nicolas Cage" id="xjA-0T-KPR"/>
+                    <navigationItem key="navigationItem" title="Where's Nicolas Cage" id="xjA-0T-KPR" userLabel="Retour">
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="MbG-tR-DMd"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -131,7 +133,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IfN-b4-4ue" userLabel="temps">
-                        <barButtonItem key="backBarButtonItem" title="Retour" id="kwD-i4-b0r"/>
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="ues-hv-NOM"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="SiQ-XF-9CN">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gjH-pJ-mbf">
                                 <rect key="frame" x="601" y="7" width="46" height="30"/>
@@ -157,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="1384.5" y="-69.5"/>
         </scene>
-        <!--Level 2-->
+        <!--Third View Controller-->
         <scene sceneID="pCv-qp-X9a">
             <objects>
                 <viewController id="3wn-S4-UDb" customClass="ThirdViewController" customModule="Swift_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -204,7 +206,8 @@
                             <constraint firstItem="LwC-xD-goX" firstAttribute="leading" secondItem="vao-Dv-pK7" secondAttribute="leadingMargin" constant="-20" id="YuK-SE-Tqk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Level 2" id="tVo-WM-yBE">
+                    <navigationItem key="navigationItem" id="tVo-WM-yBE">
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="g5a-4C-xy4"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="fhe-lr-vbP">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nK4-Cm-WAx">
                                 <rect key="frame" x="499" y="7" width="148" height="30"/>
@@ -240,20 +243,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pT-qQ-WIg">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pT-qQ-WIg">
                                 <rect key="frame" x="308" y="228" width="50" height="30"/>
                                 <state key="normal" title="Accueil"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="E3X-z6-HEV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34R-Tq-J53">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mon score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34R-Tq-J53">
                                 <rect key="frame" x="158" y="156" width="351" height="64"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="34R-Tq-J53" firstAttribute="centerY" secondItem="h2P-Kl-mCC" secondAttribute="centerY" id="U6c-5l-s5s"/>
+                            <constraint firstItem="34R-Tq-J53" firstAttribute="centerX" secondItem="h2P-Kl-mCC" secondAttribute="centerX" id="WYe-SA-bIP"/>
+                            <constraint firstItem="8pT-qQ-WIg" firstAttribute="centerX" secondItem="h2P-Kl-mCC" secondAttribute="centerX" id="YrD-zv-Zxd"/>
+                            <constraint firstItem="8pT-qQ-WIg" firstAttribute="top" secondItem="34R-Tq-J53" secondAttribute="bottom" constant="8" id="fsZ-cg-Ddg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Score" id="fxG-Sg-IyJ"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -298,7 +307,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TlM-xm-ovB" id="Bqd-YT-W3G">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -335,6 +344,6 @@
         <image name="cage" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dgF-7E-lvX"/>
+        <segue reference="E3X-z6-HEV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -47,23 +47,30 @@ class SecondViewController: UIViewController {
         
         superView.addGestureRecognizer(tapGesture)
         
+        GlobalTimer.Static.mySecondTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("counter"), userInfo: nil, repeats: true)
         
-        let fireDate = GlobalTimer.Static.myTimer.fireDate
-        let nowDate = NSDate()
-        let remainingTimeInterval = nowDate.timeIntervalSinceDate(fireDate)
-        
-        self.title = String(remainingTimeInterval as Double)
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            let fireDate = GlobalTimer.Static.myTimer.fireDate
-            let nowDate = NSDate()
-            let remainingTimeInterval = nowDate.timeIntervalSinceDate(fireDate)
-            
-            self.title = String(remainingTimeInterval as Double)
-        }
         
     }
     
+    
+    func counter() {
+        
+        ++GlobalTimer.Static.myCounter
+        // 9
+        if GlobalTimer.Static.myCounter > 9 {
+            
+            self.title = "\(GlobalTimer.Static.myCounter)"
+            
+        }
+        else {
+            
+            self.title = "0\(GlobalTimer.Static.myCounter)"
+        }
+        
+        if GlobalTimer.Static.myCounter == 30 {
+            GlobalTimer.Static.mySecondTimer.invalidate()
+         }
+    }
     
     
     //Action effectué lors du click sur l'écran
@@ -72,15 +79,12 @@ class SecondViewController: UIViewController {
         alertController = UIAlertController(title: "Perdu !", message:
             "Veuillez attendre 2 secondes pour réessayer", preferredStyle: UIAlertControllerStyle.Alert)
         
-        
         timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "DeleteAlertController", userInfo: nil, repeats: false)
         
-        
         self.presentViewController(alertController, animated: true, completion: nil)
-        
     }
     
-    // Affiche le bouton Ok de la popup
+    // Efface la popup de 2 seconde
     func DeleteAlertController()
     {
         alertController.dismissViewControllerAnimated(true, completion: nil)
@@ -108,6 +112,13 @@ class SecondViewController: UIViewController {
         
             self.presentViewController(alertController, animated: true, completion: nil)
         
+        
+        let fireDate = GlobalTimer.Static.myTimer.fireDate
+        let nowDate = NSDate()
+        GlobalTimer.Static.remainingTimeInterval = Double(fireDate.timeIntervalSinceDate(nowDate))
+        
+        GlobalTimer.Static.myTimer.invalidate()
+        GlobalTimer.Static.mySecondTimer.invalidate()
         button.hidden = false
 
     }
