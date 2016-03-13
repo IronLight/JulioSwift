@@ -46,7 +46,25 @@ class SecondViewController: UIViewController {
         tapGesture.numberOfTapsRequired = 1
         
         superView.addGestureRecognizer(tapGesture)
+        
+        
+        let fireDate = GlobalTimer.Static.myTimer.fireDate
+        let nowDate = NSDate()
+        let remainingTimeInterval = nowDate.timeIntervalSinceDate(fireDate)
+        
+        self.title = String(remainingTimeInterval as Double)
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            let fireDate = GlobalTimer.Static.myTimer.fireDate
+            let nowDate = NSDate()
+            let remainingTimeInterval = nowDate.timeIntervalSinceDate(fireDate)
+            
+            self.title = String(remainingTimeInterval as Double)
+        }
+        
     }
+    
+    
     
     //Action effectué lors du click sur l'écran
     func StartTapCoolDown(gestuRecognizer: UITapGestureRecognizer)
@@ -77,6 +95,8 @@ class SecondViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        
     }
     
     //Action effectué lors du click sur Nicolas Cage

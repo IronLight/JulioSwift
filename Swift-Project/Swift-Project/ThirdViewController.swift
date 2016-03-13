@@ -71,9 +71,6 @@ class ThirdViewController: UIViewController {
         
         buttonScore.hidden = false
         
-        
-        
-        
         let fireDate = GlobalTimer.Static.myTimer.fireDate
         let nowDate = NSDate()
         let remainingTimeInterval = nowDate.timeIntervalSinceDate(fireDate)
