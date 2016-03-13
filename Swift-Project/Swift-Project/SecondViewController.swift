@@ -106,35 +106,4 @@ class SecondViewController: UIViewController {
         return true;
     }
     
-   /* override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        //super.touchesBegan(touches, withEvent: event)
-        
-        let touch = touches.first
-        let locationTap = touch?.locationInView(self.view)
-        
-        let locationTap_X = locationTap?.x
-        let locationTap_Y = locationTap?.y
-        
-        if
-        (
-            (locationTap_X >= 137 && locationTap_X <= 157)
-        &&
-            (locationTap_Y >= 345 && locationTap_Y <= 365)
-        )
-        {
-            let alertController = UIAlertController(title: "iOScreator", message:
-                "Good job!", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Next level", style: UIAlertActionStyle.Default,handler: nil))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }else{
-            let alertController = UIAlertController(title: locationTap_X?.description, message:
-                locationTap_Y?.description, preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Next level", style: UIAlertActionStyle.Default,handler: nil))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
-    }*/
-    
 }

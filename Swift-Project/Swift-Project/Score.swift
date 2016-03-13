@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Variable de score que l'on peut atteindre depuis n'importe quelle vue car Statique
+
 class Score {
     
     struct Static {

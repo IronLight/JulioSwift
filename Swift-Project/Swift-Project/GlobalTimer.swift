@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Classe qui nous permet d'avoir une variable statique dans toute l'application.
+
 class GlobalTimer {
     
     struct Static {

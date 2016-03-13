@@ -101,11 +101,11 @@
                                     <view contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2GQ-2t-gf8">
                                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="CAx-Zl-o3e">
-                                                <rect key="frame" x="-49" y="0.0" width="751" height="375"/>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trx-RP-vDS">
                                                 <rect key="frame" x="210" y="203" width="16" height="16"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="CAx-Zl-o3e">
+                                                <rect key="frame" x="-49" y="0.0" width="751" height="375"/>
                                             </imageView>
                                         </subviews>
                                     </view>
