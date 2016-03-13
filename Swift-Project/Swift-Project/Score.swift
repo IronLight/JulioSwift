@@ -8,13 +8,14 @@
 
 import Foundation
 
-// Variable de score que l'on peut atteindre depuis n'importe quelle vue car Statique
+// Classe qui nous permet de récuperer le score final
 
 class Score {
     
     struct Static {
         static var myScore: NSTimeInterval = NSTimeInterval()
     }
+    
     class var myScore: NSTimeInterval {
         get { return Static.myScore }
         set { Static.myScore = newValue }

@@ -8,18 +8,21 @@
 
 import UIKit
 
-class ThoufffController: UIViewController {
+class ScoreController: UIViewController {
     
     @IBOutlet weak var TheScore: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
         
-        // Ici on essais d'avoir un score assez grand, plus le temps passe et moins le score sera haut. (Max 60 000)
+        // Cache le boutton de retour de la vue.
+        self.navigationItem.setHidesBackButton(true, animated:true)
+        
+        // Plus le temps passe, moins le score sera élevé. (Max 60 000)
         let TimerScore: Double = (30 - Score.Static.myScore) * 1000
         
+        // Affiche le score
         TheScore.text = "Ton score est : \(String(format: "%.0f", TimerScore))"
-        
     }
     
 }
+

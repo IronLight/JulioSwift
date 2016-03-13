@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainController.swift
 //  Swift-Project
 //
 //  Created by Nathan Maillard on 23/02/2016.
@@ -8,31 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class MainController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
-        oriantation()
+        orientation()
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.All
-    }
-    
-    override func shouldAutorotate() -> Bool {
-        return true;
-    }
-    
-    func oriantation()
+    // Bloque la vue en mode portrait
+    func orientation()
     {
         let value = UIInterfaceOrientation.Portrait.rawValue
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
@@ -46,7 +32,7 @@ class ViewController: UIViewController {
         GlobalTimer.Static.myTimer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: Selector("popupResult"), userInfo: nil, repeats: false)
     }
     
-    // Lorsque le timer atteint 30 secondes un messages s'affiche "Perdu" et retour au menu
+    // Lorsque le timer atteint 30 secondes, affiche "Perdu" et retour au menu
     func popupResult(){
         let alert = UIAlertController(title: "Perdu", message: "Temps écoulé", preferredStyle: .Alert)
         
@@ -60,6 +46,6 @@ class ViewController: UIViewController {
         alert.addAction(firstAction)
         presentViewController(alert, animated: true, completion: nil)
     }
-
 }
+
 

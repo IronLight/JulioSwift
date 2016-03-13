@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
-    
+class LevelTwoController: UIViewController {
     
     @IBOutlet weak var scrollView2: UIScrollView!
     @IBOutlet weak var imageView2: UIImageView!
@@ -23,6 +22,25 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Ajout d'une action au click sur Nicolas Cage
+        let imageRecognized = UITapGestureRecognizer(target: self, action: "TapViewAction:")
+        
+        // Ajout d'une action au click sur la vue
+        let tapGesture = UITapGestureRecognizer(target: self, action: "StartTapCoolDown:")
+        
+        buttonScore.hidden = true
+        orientation()
+        
+        // Gere le zoom
+        self.scrollView2.minimumZoomScale = 1.0
+        self.scrollView2.maximumZoomScale = 6.0
+        
+        scrollView2.userInteractionEnabled = true
+        elementClickable2.userInteractionEnabled = true
+        
+        elementClickable2.addGestureRecognizer(imageRecognized)
+        superView2.addGestureRecognizer(tapGesture)
+        
         // Affiche le timer dans le titre
         if GlobalTimer.Static.myCounter > 9 {
             
@@ -34,31 +52,44 @@ class ThirdViewController: UIViewController {
             self.title = "0\(GlobalTimer.Static.myCounter)"
         }
         
-        // Remet en marche les deux Timers
+        // Remet en marche les deux timers
         GlobalTimer.Static.myTimer = NSTimer.scheduledTimerWithTimeInterval( GlobalTimer.Static.remainingTimeInterval, target: self, selector: Selector("popupResult"), userInfo: nil, repeats: true)
         
         GlobalTimer.Static.mySecondTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("counter"), userInfo: nil, repeats: true)
+    }
+    
+    func orientation()
+    {
+        let value = UIInterfaceOrientation.LandscapeRight.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true;
+    }
+    
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?
+    {
+        return self.superView2
+    }
+    
+    func counter() {
         
+        ++GlobalTimer.Static.myCounter
+        // 9
+        if GlobalTimer.Static.myCounter > 9 {
+            
+            self.title = "\(GlobalTimer.Static.myCounter)"
+            
+        }
+        else {
+            
+            self.title = "0\(GlobalTimer.Static.myCounter)"
+        }
         
-        //
-        buttonScore.hidden = true
-        
-        // Gere le zoom
-        self.scrollView2.minimumZoomScale = 1.0
-        self.scrollView2.maximumZoomScale = 6.0
-        
-        scrollView2.userInteractionEnabled = true
-        elementClickable2.userInteractionEnabled = true
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: "TapAction2:")
-        
-        elementClickable2.addGestureRecognizer(tapGesture)
-        
-        let tapGesture2 = UITapGestureRecognizer(target: self, action: "StartTapCoolDown:")
-        
-        tapGesture2.numberOfTapsRequired = 1
-        
-        superView2.addGestureRecognizer(tapGesture2)
+        if GlobalTimer.Static.myCounter == 30 {
+            GlobalTimer.Static.mySecondTimer.invalidate()
+        }
     }
     
     // Lorsque le timer atteint 30 secondes un messages s'affiche "Perdu" et retour au menu
@@ -89,13 +120,13 @@ class ThirdViewController: UIViewController {
         
     }
     
-    // Affiche le bouton Ok de la popup
+    // Efface la popup de 2 secondes
     func DeleteAlertController()
     {
         alertController.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func TapAction2(gestuRecognizer: UITapGestureRecognizer)
+    func TapViewAction(gestuRecognizer: UITapGestureRecognizer)
     {
         let alertController = UIAlertController(title: "Bravo", message:
             "Découvre ton score !", preferredStyle: UIAlertControllerStyle.Alert)
@@ -115,38 +146,5 @@ class ThirdViewController: UIViewController {
         GlobalTimer.Static.mySecondTimer.invalidate()
     }
     
-    func counter() {
-        
-        ++GlobalTimer.Static.myCounter
-        // 9
-        if GlobalTimer.Static.myCounter > 9 {
-            
-            self.title = "\(GlobalTimer.Static.myCounter)"
-            
-        }
-        else {
-            
-            self.title = "0\(GlobalTimer.Static.myCounter)"
-        }
-        
-        if GlobalTimer.Static.myCounter == 30 {
-            GlobalTimer.Static.mySecondTimer.invalidate()
-        }
-    }
-    
-    func oriantation()
-    {
-        let value = UIInterfaceOrientation.LandscapeRight.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
-    }
-    
-    override func shouldAutorotate() -> Bool {
-        return true;
-    }
-    
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?
-    {
-        return self.superView2
-    }
     
 }
